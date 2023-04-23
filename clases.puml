@@ -1,0 +1,56 @@
+@startuml
+left to right direction
+skin rose
+
+'clases
+class Sistema{
+socios
+libros
+socio
+iniciarSesion()
+menuPrincipal()
+menuPrestamo()
+editarInformacion()
+cambiarContrasenia()
+cambiarCorreo()
+calificarLibro()
+}
+class Utils{
+ArrayList Libro[] libros
+ArrayList Socio[] socios
+validarEmail()
+}
+
+class Socio{
+nombre
+apellido
+correoElectronico
+numeroDeSocio
+contrasenia
+ArrayList Libro []librosEnPrestamo
+getNombre()
+getApellido()
+getCorreoElectronico()
+getNumeroDeSocio()
+getContrasenia()
+getArrayList Libro []librosEnPrestamo()
+agregarLibro()
+}
+
+class Libro{
+isbn
+titulo
+autor
+categoria
+getIsbn()
+getTitulo()
+getAutor()
+getCategoria()
+}
+
+'relaciones
+Libro "1...*" -- "1*" Socio : agregarLibro <
+Libro "1...*" -- "1" Sistema : agregarLibro >
+Utils "1" -- "1" Sistema : validarEmail <
+
+@enduml

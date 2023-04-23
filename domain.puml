@@ -1,0 +1,34 @@
+@startuml
+left to right direction
+skin rose
+
+'entidades
+entity Libro {
+    {static}  ISBN
+    titulo
+    autor
+    categoria
+}
+
+entity Socio {
+    nombre
+    apellido
+    correoElectronico
+    numeroDeSocio
+    contrasenia
+    librosEnPrestamo
+}
+
+entity Sistema {
+    socios
+    libros
+    socio
+}
+
+'relaciones
+Socio "1" -- "1...*" Libro : Tiene >
+Libro "1...*" -- "1" Sistema : Registra <
+Sistema "1" -- "1" Socio: Solicitar Libro <
+
+
+@enduml
