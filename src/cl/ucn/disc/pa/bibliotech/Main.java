@@ -110,12 +110,8 @@ public final class Main {
         StdOut.print("Ingrese el ISBN del libro que quiere calificar: ");
         String isbn = StdIn.readLine();
 
-        try {
+        calificarLibro(sistema);
 
-
-        } catch (IOException ex) {
-            StdOut.println("Ocurrio un error, intente nuevamente: " + ex.getMessage());
-        }
     }
 
     private static void menuPrestamo(Sistema sistema) {
